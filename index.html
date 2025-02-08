@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Din</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Lilita+One&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="contain">
@@ -18,7 +18,7 @@
         <div class="kotakleft">
           <h1>
             Hi There! I'm <br />
-            <span style="color: #1B998B">Nadine Serevina.</span>
+            <span style="color: #1b998b">Nadine Serevina.</span>
           </h1>
           <div class="icon">
             <div>
@@ -52,38 +52,64 @@
               hesitate if you ever want a quick snap 📸
             </p>
           </div>
-          <img onclick = "openModal('./pics/DIN.jpeg')" src="./pics/DIN.jpeg" alt="Nadine" class="nadine" />
+
+          <div class="contt">
+            <img
+              onclick="openModal('./pics/DIN.jpeg')"
+              src="./pics/DIN.jpeg"
+              alt="Nadine"
+              class="nadine"
+            />
+            <img
+              onclick="openModal('./pics/DIN2.jpeg')"
+              src="./pics/DIN2.jpeg"
+              alt="Nadine"
+              class="nadine"
+            />
+            <img
+              onclick="openModal('./pics/DIN3.jpeg')"
+              src="./pics/DIN3.jpeg"
+              alt="Nadine"
+              class="nadine"
+            />
+          </div>
         </div>
       </div>
       <div class="right">
         <div class="kotakright">
-            <h2>Work</h2>
-            <div class="content">
+          <h2>Work</h2>
+          <div class="content">
             <h3>Hyppe</h3>
-            <p style="margin-bottom: 16px; color: #15796E; font-weight: 800;">Project Manager</p>
-            <p style="margin-bottom: 16px;">
+            <p style="margin-bottom: 16px; color: #15796e; font-weight: 800">
+              Project Manager
+            </p>
+            <p style="margin-bottom: 16px">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
               inventore vero nulla eos minima! Molestias, aliquid quam aperiam
               quasi exercitationem sapiente ullam, voluptate vero enim, ad porro
               mollitia. Nam, blanditiis!
             </p>
-            </div>
-            <div class="content">
+          </div>
+          <div class="content">
             <h3>Kamubisa.id</h3>
-            <p style="margin-bottom: 16px; color: #15796E; font-weight: 800;">Content Manager</p>
-            <p style="margin-bottom: 10px;">
+            <p style="margin-bottom: 16px; color: #15796e; font-weight: 800">
+              Content Manager
+            </p>
+            <p style="margin-bottom: 10px">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
               inventore vero nulla eos minima! Molestias, aliquid quam aperiam
               quasi exercitationem sapiente ullam, voluptate vero enim, ad porro
               mollitia. Nam, blanditiis!
             </p>
-            </div>
-            
+          </div>
+
           <h2>Projects</h2>
           <div class="content">
             <h3>Airbnb Manager</h3>
-            <p style="margin-bottom: 16px; color: #15796E; font-weight: 800;">Property Manager</p>
-            <p style="margin-bottom: 10px;">
+            <p style="margin-bottom: 16px; color: #15796e; font-weight: 800">
+              Property Manager
+            </p>
+            <p style="margin-bottom: 10px">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
               inventore vero nulla eos minima! Molestias, aliquid quam aperiam
               quasi exercitationem sapiente ullam, voluptate vero enim, ad porro
@@ -91,9 +117,41 @@
             </p>
           </div>
           <h2>Education</h2>
-          </div>
         </div>
       </div>
     </div>
+    <div id="lightbox-modal" class="modal">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <img class="modal-img" id="modal-img" src="" alt="Full-size image" />
+    </div>
   </body>
+  <script>
+    // Open the modal and set the image source
+    function openModal(imageSrc) {
+      console.log("openModal function triggered with image source:", imageSrc);
+      const modal = document.getElementById("lightbox-modal");
+      const modalImg = document.getElementById("modal-img");
+      modal.style.display = "flex"; // Show the modal
+      modalImg.src = imageSrc; // Set the image source
+      console.log("Modal image source set to:", modalImg.src); // Check if the source updates
+      document.body.style.overflow =
+        document.body.style.overflow == "hidden" ? "auto" : "hidden";
+    }
+    // Close the modal
+    function closeModal() {
+      const modal = document.getElementById("lightbox-modal");
+      modal.style.display = "none"; // Hide the modal
+
+      document.body.style.overflow =
+        document.body.style.overflow == "hidden" ? "auto" : "hidden";
+    }
+
+    // Close the modal if the user clicks outside the image
+    window.onclick = function (event) {
+      const modal = document.getElementById("lightbox-modal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
 </html>
