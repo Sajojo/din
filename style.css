@@ -87,6 +87,9 @@ p {
     justify-content: center;
     align-items: center;
   }
+  .icons {
+    margin-left: 25px;
+  }
   .contt {
     grid-template-columns: 1fr;
   }
