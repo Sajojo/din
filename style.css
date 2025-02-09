@@ -87,6 +87,9 @@ p {
 }
 
 @media screen and (max-width: 720px) {
+  .carousel-container {
+    display: block !important;
+  }
   .icon {
     justify-content: center;
     align-items: center;
@@ -100,8 +103,7 @@ p {
   img.nadine {
     max-width: 40%;
   }
-  .nadine:nth-child(2),
-  .nadine:nth-child(3) {
+  .nadine {
     display: none;
   }
 }
@@ -193,4 +195,59 @@ h3 {
 
 .close-btn:hover {
   color: #ccc;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  display: none; /* Hide by default */
+  position: relative;
+  max-width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+  height: 300px; /* Add fixed height */
+}
+
+.carousel {
+  display: flex;
+  transition: 0.5s ease-in-out;
+}
+
+.carousel-inner {
+  display: flex;
+  width: 100%;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 300px; /* Match container height */
+  object-fit: cover; /* Ensure images fill container */
+  border-radius: 10px;
+  cursor: pointer; /* Add pointer cursor to indicate clickability */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  z-index: 2; /* Ensure buttons stay above images */
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
 }

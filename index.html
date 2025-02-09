@@ -77,6 +77,34 @@
               class="nadine"
             />
           </div>
+
+          <div class="carousel-container">
+            <div class="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item slide">
+                  <div onclick="openModal('./pics/DIN.jpeg')">
+                    <img src="./pics/DIN.jpeg" alt="Din" />
+                  </div>
+                </div>
+                <div class="carousel-item slide">
+                  <div onclick="openModal('./pics/DIN2.jpeg')">
+                    <img src="./pics/DIN2.jpeg" alt="DIN isap" />
+                  </div>
+                </div>
+                <div class="carousel-item slide">
+                  <div onclick="openModal('./pics/DIN3.jpeg') ">
+                    <img src="./pics/DIN3.jpeg" alt="Din senyum" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-button prev" onclick="moveSlide(-1)">
+              &#10094;
+            </button>
+            <button class="carousel-button next" onclick="moveSlide(1)">
+              &#10095;
+            </button>
+          </div>
         </div>
       </div>
       <div class="right">
@@ -178,6 +206,17 @@
     </div>
   </body>
   <script>
+    let currentIndex = 0;
+    const totalSlides = document.querySelectorAll(".carousel-item").length; // Define totalSlides globally
+
+    function moveSlide(direction) {
+      const carouselInner = document.querySelector(".carousel-inner");
+      const totalItems = document.querySelectorAll(".carousel-item").length;
+      currentIndex = (currentIndex + direction + totalItems) % totalItems;
+      const offset = -currentIndex * 100;
+      carouselInner.style.transform = `translateX(${offset}%)`;
+    }
+
     // Open the modal and set the image source
     function openModal(imageSrc) {
       console.log("openModal function triggered with image source:", imageSrc);
