@@ -16,6 +16,7 @@ h1 {
   font-family: Zain;
   line-height: 50px;
 }
+
 .left,
 .right {
   position: relative;
@@ -44,7 +45,9 @@ img.nadine {
   transition: 0.25s ease-in-out;
 }
 p {
-  font-family: arial;
+  font-family: Zain;
+  line-height: 108%;
+  font-size: 18pt;
   color: white;
 }
 .icons:hover {
@@ -65,7 +68,7 @@ p {
 .kotakright {
   margin-left: 0px;
   margin-right: 20px;
-  margin-top: 55px;
+  margin-top: 28px;
 }
 
 .icon {
@@ -80,6 +83,7 @@ p {
 .paragraph {
   margin-top: 10px;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 720px) {
@@ -127,13 +131,21 @@ p {
 h2 {
   color: #feffbe;
   font-family: Zain;
-  font-size: 40pt;
+  font-size: 45pt;
+  font-weight: 900;
 }
 
 h3 {
-  color: #9b1d20;
-  font-size: 20pt;
-  font-family: Zain;
+  color: #15796e;
+  font-size: 25pt;
+  font-family: "Lilita One";
+}
+
+.company {
+  font-size: 18pt;
+  color: #9b1d20 !important;
+  font-family: "Lilita One";
+  margin-bottom: 16px;
 }
 
 .content {
@@ -147,6 +159,8 @@ h3 {
 
 .right > .kotakright > .content > p {
   color: #9b1d20;
+  font-weight: 400;
+  margin-bottom: 18px;
 }
 
 .modal {
