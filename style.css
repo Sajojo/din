@@ -44,15 +44,32 @@ img.nadine {
   transform: scale(1.05);
   transition: 0.25s ease-in-out;
 }
+svg {
+  width: 40px;
+  height: 40px;
+  fill: #ffffff;
+}
+
+svg.wa:hover {
+  transition: ease 0.25s;
+  fill: #25d366;
+}
+
+svg.mail:hover {
+  transition: ease 0.25s;
+  fill: #ebd834;
+}
+
+svg.link:hover {
+  transition: ease 0.25s;
+  fill: #26a0d4;
+}
+
 p {
   font-family: Zain;
   line-height: 108%;
   font-size: 18pt;
   color: white;
-}
-.icons:hover {
-  opacity: 50%;
-  transition: 0.25s ease;
 }
 .kotakleft {
   display: flex;
